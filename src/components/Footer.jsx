@@ -4,11 +4,11 @@ export default function Footer() {
 			<div className='container'>
 				<div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 '>
 					<div className='col'>
-						<h1>Movie Footer</h1>
+						<h5>Movie Footer</h5>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
 					</div>
 					<div className='col'>
-						<h1> Links </h1>
+						<h5> Links </h5>
 						<ul className='list-unstyled'>
 							<li>
 								<a href='#'>Link 1</a>
@@ -25,7 +25,7 @@ export default function Footer() {
 						</ul>
 					</div>
 					<div className='col'>
-						<h1>Legal</h1>
+						<h5>Legal</h5>
 						<ul className='list-unstyled'>
 							<li>
 								<a href='#'>Link 1</a>
