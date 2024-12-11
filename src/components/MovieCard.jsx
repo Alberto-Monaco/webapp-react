@@ -1,10 +1,14 @@
 export default function MovieCard({ movie }) {
 	return (
-		<div className='card'>
+		<div className='card shadow-sm'>
 			<div className='card-body'>
-				<h5 className='card-title'>{movie.title}</h5>
-				<h6 className='card-subtitle mb-2 text-muted'>{movie.description}</h6>
-				<p className='card-text'>{movie.author}</p>
+				<h3 className='card-title'>{movie.title}</h3>
+				<p className='card-subtitle mb-2 text-muted'>
+					<span className='fw-bold'>Description: </span> {movie.description}
+				</p>
+				<p className='card-text'>
+					<span className='fw-bold'>Author: </span> {movie.author}
+				</p>
 			</div>
 		</div>
 	)
