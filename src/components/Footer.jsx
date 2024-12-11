@@ -2,9 +2,9 @@ export default function Footer() {
 	return (
 		<footer className='bg-dark py-5 text-white'>
 			<div className='container'>
-				<div className='row row-cols-1 row-cols-sm-2 row-cols-md-3'>
+				<div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 '>
 					<div className='col'>
-						<h1>Footer</h1>
+						<h1>Movie Footer</h1>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
 					</div>
 					<div className='col'>
