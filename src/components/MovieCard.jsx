@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function MovieCard({ movie }) {
 	return (
 		<div className='card shadow-sm'>
@@ -9,6 +11,9 @@ export default function MovieCard({ movie }) {
 				<p className='card-text'>
 					<span className='fw-bold'>Author: </span> {movie.author}
 				</p>
+				<Link to={`/movies/${movie.id}`} className='btn btn-primary'>
+					View Details
+				</Link>
 			</div>
 		</div>
 	)
