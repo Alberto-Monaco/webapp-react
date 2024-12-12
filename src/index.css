@@ -7,3 +7,19 @@
 main {
     min-height: 780px;
 }
+
+body {
+    background-color: #4e4d4d;
+}
+
+.card-body {
+    background-color: #bfbfbf;
+}
+
+.card-title {
+    color: #464646;
+}
+
+.card-text {
+    color: #464646;
+}
