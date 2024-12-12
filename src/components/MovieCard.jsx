@@ -6,10 +6,10 @@ export default function MovieCard({ movie }) {
 			<div className='card-body'>
 				<h3 className='card-title'>{movie.title}</h3>
 				<p className='card-subtitle mb-2 text-muted'>
-					<span className='fw-bold'>Description: </span> {movie.description}
+					<span className='fw-bold'>Abstract: </span> {movie.abstract}
 				</p>
 				<p className='card-text'>
-					<span className='fw-bold'>Author: </span> {movie.author}
+					<span className='fw-bold'>Director: </span> {movie.director}
 				</p>
 				<Link to={`/movies/${movie.id}`} className='btn btn-primary'>
 					View Details
