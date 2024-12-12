@@ -56,7 +56,7 @@ export default function MovieDetail() {
 						</div>
 					))}
 				</div>
-				<Link className='btn btn-primary mt-3' to='/'>
+				<Link className='btn btn-dark mt-3' to='/'>
 					Back to Home
 				</Link>
 			</section>

@@ -11,7 +11,7 @@ export default function MovieCard({ movie }) {
 				<p className='card-text'>
 					<span className='fw-bold'>Director: </span> {movie.director}
 				</p>
-				<Link to={`/movies/${movie.id}`} className='btn btn-primary'>
+				<Link to={`/movies/${movie.id}`} className='btn btn-dark'>
 					View Details
 				</Link>
 			</div>
