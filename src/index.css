@@ -23,3 +23,7 @@ body {
 .card-text {
     color: #464646;
 }
+
+.stars-gold {
+    color: rgb(198, 132, 0);
+}
