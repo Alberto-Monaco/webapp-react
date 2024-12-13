@@ -38,7 +38,7 @@ export default function ReviewFormCard({ movie_id }) {
 		setVote(0)
 	}
 	return (
-		<div className='container'>
+		<div className='container mt-5'>
 			<div className='card shadow-sm mb-4'>
 				<div className='card-body'>
 					<h2 className='card-title'>Leave a Review</h2>
