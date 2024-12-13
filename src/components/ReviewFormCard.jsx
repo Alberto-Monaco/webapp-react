@@ -7,7 +7,11 @@ export default function ReviewFormCard({ movie_id }) {
 
 	function handleSubmit(e) {
 		e.preventDefault()
-		console.log(name, text, vote)
+
+		if (vote === 0) {
+			alert('Per favore, seleziona un voto prima di inviare la recensione')
+			return
+		}
 
 		const formData = {
 			name,
@@ -29,6 +33,9 @@ export default function ReviewFormCard({ movie_id }) {
 				console.log(data)
 			})
 			.catch((err) => console.log(err))
+		setName('')
+		setText('')
+		setVote(0)
 	}
 	return (
 		<div className='container'>
@@ -37,35 +44,48 @@ export default function ReviewFormCard({ movie_id }) {
 					<h2 className='card-title'>Leave a Review</h2>
 					<form onSubmit={handleSubmit}>
 						<div className='form-group'>
-							<div className='form-group'>
-								<label htmlFor='name'>Name</label>
-								<input
-									type='text'
-									id='name'
-									className='form-control'
-									value={name}
-									onChange={(e) => setName(e.target.value)}
-								/>
-							</div>
-							<div className='form-group'>
-								<label htmlFor='text'>Review</label>
-								<textarea id='text' className='form-control' value={text} onChange={(e) => setText(e.target.value)} />
-							</div>
-							<div className='form-group'>
-								<label htmlFor='vote'>Rating</label>
-								<input
-									type='number'
-									id='vote'
-									className='form-control'
-									value={vote}
-									onChange={(e) => setVote(e.target.value)}
-								/>
-							</div>
-							<div className='card-footer'>
-								<button className='btn btn-primary' type='submit'>
-									Submit
+							<label htmlFor='name'>Name</label>
+							<input
+								type='text'
+								id='name'
+								className='form-control'
+								value={name}
+								required
+								onChange={(e) => setName(e.target.value)}
+							/>
+						</div>
+						<div className='form-group'>
+							<label htmlFor='text'>Review</label>
+							<textarea
+								id='text'
+								className='form-control'
+								required
+								value={text}
+								onChange={(e) => setText(e.target.value)}
+							/>
+						</div>
+						<div className='form-group'>
+							<label htmlFor='vote'>Vote</label>
+							<div className='star-rating text-warning'>
+								{[1, 2, 3, 4, 5].map((star) => (
+									<span
+										key={star}
+										className={`star ${star <= vote ? 'filled' : 'empty'}`}
+										onClick={() => setVote(star)}
+										required
+										style={{ cursor: 'pointer', fontSize: '24px' }}>
+										{star <= vote ? '★' : '☆'}
+									</span>
+								))}
+								<button className='btn btn-secondary ms-2 btn-sm' onClick={() => setVote(0)}>
+									Reset
 								</button>
 							</div>
+						</div>
+						<div className='card-footer'>
+							<button className='btn btn-primary' type='submit'>
+								Submit
+							</button>
 						</div>
 					</form>
 				</div>
