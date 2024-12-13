@@ -1,8 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
-//import reviews from '../db/reviews'
-//import movies from '../db/movies'
 import { useState, useEffect } from 'react'
 import ReviewCard from '../components/ReviewCard'
+import ReviewFormCard from '../components/ReviewFormCard'
 
 export default function MovieDetail() {
 	const { id } = useParams()
@@ -24,6 +23,7 @@ export default function MovieDetail() {
 
 	return (
 		<>
+			<ReviewFormCard movie_id={id} />
 			<section className='container mt-5'>
 				<h3 className='text-white '>Movie</h3>
 				<div className='card shadow-sm mb-4'>
