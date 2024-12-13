@@ -67,7 +67,7 @@ export default function ReviewFormCard({ movie_id }) {
 						</div>
 						<div className='form-group'>
 							<label htmlFor='vote'>Vote</label>
-							<div className='star-rating text-warning'>
+							<div className='star-rating stars-gold'>
 								{[1, 2, 3, 4, 5].map((star) => (
 									<span
 										key={star}
