@@ -7,7 +7,6 @@ export default function ReviewFormCard({ movie_id }) {
 
 	function handleSubmit(e) {
 		e.preventDefault()
-
 		if (vote === 0) {
 			alert('Per favore, seleziona un voto prima di inviare la recensione')
 			return
@@ -69,12 +68,7 @@ export default function ReviewFormCard({ movie_id }) {
 							<label htmlFor='vote'>Vote</label>
 							<div className='star-rating stars-gold'>
 								{[1, 2, 3, 4, 5].map((star) => (
-									<span
-										key={star}
-										className={`star ${star <= vote ? 'filled' : 'empty'}`}
-										onClick={() => setVote(star)}
-										required
-										style={{ cursor: 'pointer', fontSize: '24px' }}>
+									<span key={star} onClick={() => setVote(star)} style={{ cursor: 'pointer', fontSize: '24px' }}>
 										{star <= vote ? '★' : '☆'}
 									</span>
 								))}
