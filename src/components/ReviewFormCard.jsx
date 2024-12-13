@@ -49,6 +49,7 @@ export default function ReviewFormCard({ movie_id }) {
 								type='text'
 								id='name'
 								className='form-control'
+								placeholder='Name'
 								value={name}
 								required
 								onChange={(e) => setName(e.target.value)}
@@ -59,12 +60,13 @@ export default function ReviewFormCard({ movie_id }) {
 							<textarea
 								id='text'
 								className='form-control'
+								placeholder='a few words about the movie'
 								required
 								value={text}
 								onChange={(e) => setText(e.target.value)}
 							/>
 						</div>
-						<div className='form-group'>
+						<div className='form-group my-3'>
 							<label htmlFor='vote'>Vote</label>
 							<div className='star-rating stars-gold'>
 								{[1, 2, 3, 4, 5].map((star) => (
@@ -75,6 +77,7 @@ export default function ReviewFormCard({ movie_id }) {
 								<button className='btn btn-secondary ms-2 btn-sm' onClick={() => setVote(0)}>
 									Reset
 								</button>
+								{vote === 0 && <div className='text-danger'>Please select a vote</div>}
 							</div>
 						</div>
 						<div className='card-footer'>
