@@ -31,6 +31,7 @@ export default function ReviewFormCard({ movie_id }) {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data)
+				alert('Recensione inviata con successo')
 			})
 			.catch((err) => console.log(err))
 		setName('')
