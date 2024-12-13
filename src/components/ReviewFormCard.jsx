@@ -80,11 +80,10 @@ export default function ReviewFormCard({ movie_id }) {
 								{vote === 0 && <div className='text-danger'>Please select a vote</div>}
 							</div>
 						</div>
-						<div className='card-footer'>
-							<button className='btn btn-primary' type='submit'>
-								Submit
-							</button>
-						</div>
+
+						<button className='btn btn-dark' type='submit'>
+							Submit
+						</button>
 					</form>
 				</div>
 			</div>
