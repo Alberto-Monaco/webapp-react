@@ -9,8 +9,7 @@ export default function ReviewFormCard({ movie_id, handleSuccess }) {
 	function handleSubmit(e) {
 		e.preventDefault()
 		if (vote === 0) {
-			alert('Per favore, seleziona un voto prima di inviare la recensione')
-			return
+			return alert('Per favore, seleziona un voto prima di inviare la recensione')
 		}
 
 		const formData = {
