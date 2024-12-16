@@ -1,12 +1,13 @@
 import { useState } from 'react'
 
-export default function ReviewFormCard({ movie_id }) {
+export default function ReviewFormCard({ movie_id, handleSuccess }) {
 	const [visible, setVisible] = useState(false)
 	const [name, setName] = useState('')
 	const [text, setText] = useState('')
 	const [vote, setVote] = useState(0)
 
 	function handleSubmit(e) {
+		e.preventDefault()
 		if (vote === 0) {
 			alert('Per favore, seleziona un voto prima di inviare la recensione')
 			return
@@ -30,12 +31,13 @@ export default function ReviewFormCard({ movie_id }) {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data)
-				alert('Recensione inviata con successo')
+				handleSuccess(true)
+				setName('')
+				setText('')
+				setVote(0)
+				setVisible(false)
 			})
 			.catch((err) => console.log(err))
-		setName('')
-		setText('')
-		setVote(0)
 	}
 	return (
 		<div className='container mt-5'>

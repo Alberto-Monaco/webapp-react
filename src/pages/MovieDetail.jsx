@@ -7,7 +7,7 @@ export default function MovieDetail() {
 	const { id } = useParams()
 	const movieUrl = `http://localhost:3000/movies/${id}`
 	const [movie, setMovie] = useState(null)
-
+	const [success, setSuccess] = useState(false)
 	useEffect(() => {
 		fetch(movieUrl)
 			.then((res) => res.json())
@@ -15,7 +15,7 @@ export default function MovieDetail() {
 				setMovie(data)
 			})
 			.catch((err) => console.log(err))
-	}, [])
+	}, [success])
 
 	//const movie = movies.find((movie) => movie.id === parseInt(id))
 
@@ -23,7 +23,7 @@ export default function MovieDetail() {
 
 	return (
 		<>
-			<ReviewFormCard movie_id={id} />
+			<ReviewFormCard movie_id={id} handleSuccess={setSuccess} />
 			<section className='container my-5'>
 				<h3 className='text-white '>Movie</h3>
 				<div className='card shadow-sm mb-4'>
